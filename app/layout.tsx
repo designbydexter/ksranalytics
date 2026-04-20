@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${spaceMono.variable} ${dmSans.variable}`}>
-      <body style={{ fontFamily: 'var(--font-dm-sans, DM Sans), sans-serif' }}>
+      <body suppressHydrationWarning style={{ fontFamily: 'var(--font-dm-sans, DM Sans), sans-serif' }}>
         {children}
       </body>
     </html>
