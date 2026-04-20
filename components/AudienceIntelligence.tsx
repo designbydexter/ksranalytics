@@ -175,7 +175,7 @@ export default function AudienceIntelligence() {
     indexAxis: 'y' as const,
     responsive: true, maintainAspectRatio: false,
     animation: { duration: 1000, easing: 'easeOutCubic' as const },
-    plugins: { legend: { display: false }, tooltip: { backgroundColor: '#0E1426', titleColor: COLOR.ink, bodyColor: COLOR.ink, borderColor: COLOR.border2, borderWidth: 1, padding: 12, cornerRadius: 4, callbacks: { label: (ctx: import('chart.js').TooltipItem<'bar'>) => `${ctx.parsed.x.toLocaleString()} followers` } } },
+    plugins: { legend: { display: false }, tooltip: { backgroundColor: '#0E1426', titleColor: COLOR.ink, bodyColor: COLOR.ink, borderColor: COLOR.border2, borderWidth: 1, padding: 12, cornerRadius: 4, callbacks: { label: (ctx: import('chart.js').TooltipItem<'bar'>) => `${(ctx.parsed?.x ?? 0).toLocaleString()} followers` } } },
     scales: {
       x: { grid: gridConfig, ticks: { ...tickConfig, callback: (v: number | string) => Number(v).toLocaleString() } },
       y: { grid: { display: false }, ticks: { ...tickConfig, color: COLOR.ink, font: { family: "'DM Sans', sans-serif", size: 13 } } },
